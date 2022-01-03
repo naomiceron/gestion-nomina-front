@@ -16,7 +16,6 @@ class App extends React.Component {
   constructor(props){
     super(props);
     console.log('El componente se cargó');
-   
   }
   
   componentDidMount(){
