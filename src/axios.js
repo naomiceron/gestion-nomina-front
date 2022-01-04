@@ -4,7 +4,7 @@ import withMessageHandlerActions from './hoc/withMessageHandler/actions';
 import withLoaderHandlerActions from './hoc/withLoadHandler/actions';
 
 const instance = axios.create({
-  baseURL: "https://swift-lizard-carpet.glitch.me/",
+  baseURL: "https://deerland-empleados.herokuapp.com/",
   timeout: 3000,
 });
 instance.defaults.headers.common['Content-Type'] = 'application/vnd.api+json';
