@@ -23,8 +23,7 @@ class Solicitud extends Component{
                   <div>
                     {
                       datos.map(item =>(
-                        <p>{item.idsolicitudn}</p>
-                        
+                        <p key={ Math.random().toString(36).substr(2, 9) }>{item.idsolicitudn}</p>
                       ))
                     }
                   </div>
