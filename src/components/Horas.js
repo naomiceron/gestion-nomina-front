@@ -1,66 +1,90 @@
 import React, { Component } from "react";
+import {  Grid, Button, TextField, Typography } from "@mui/material";
+import { HomeSharp, SaveSharp } from "@material-ui/icons";
 
-class Horas extends Component{
-    render(){
-        return (
-            <div className='containerPrincipal'>
-                <div className='containerSecundario'>
-                    <div className='form-group'>
-                        <h1>Reporte de horas trabajadas</h1>
-                        <label>ID Empleado:</label>
-                        <br/>
-                        <input
-                            type='text'
-                            className='form-control'
-                        />
-                        <br/>
-                        <label>nombre:</label>
-                        <br/>
-                        <input
-                            type='text'
-                            className='form-control'
-                        />
-                        <br/>
-                        <label>correo:</label>
-                        <br/>
-                        <input
-                            type='text'
-                            className='form-control'
-                        />
-                        <br/>
-                        <label>banco:</label>
-                        <br/>
-                        <input
-                            type='text'
-                            className='form-control'
-                        />
-                        <br/>
-                        <label>numero de cuenta:</label>
-                        <br/>
-                        <input
-                            type='text'
-                            className='form-control'
-                        />
-                        <br/>
-                        <label>salario base:</label>
-                        <br/>
-                        <input
-                            type='text'
-                            className='form-control'
-                        />
-                        <br/>
-                        <label>horas extra:</label>
-                        <br/>
-                        <input
-                            type='text'
-                            className='form-control'
-                        />
-                        <br/> <br/>
-                        <button className='btn btn-primary'>Guardar horas trabajadas</button>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+class Horas extends Component {
+  render() {
+    return (
+        <Grid container spacing={2} marginLeft={5} marginTop={5}>
+        <Grid item sm={12} md={6} className="ingredients-form">
+          <div className="form-group">
+          <Typography variant="h4" component="h4">
+              Reporte de horas trabajadas
+            </Typography>
+            <br />
+            <TextField
+              id="outlined-basic"
+              label="ID Empleado"
+              variant="outlined"
+              type="text"
+            />
+            <br />
+            <br />
+            <TextField
+              id="outlined-basic"
+              label="Nombre"
+              variant="outlined"
+              type="text"
+            />
+            <br />
+            <br />
+            <TextField
+              id="outlined-basic"
+              label="Correo"
+              variant="outlined"
+              type="text"
+            />
+            <br />
+            <br />
+            <TextField
+              id="outlined-basic"
+              label="Banco"
+              variant="outlined"
+              type="text"
+            />
+            <br />
+            <br />
+            <TextField
+              id="outlined-basic"
+              label="Numero de cuenta"
+              variant="outlined"
+              type="text"
+            />
+            <br />
+            <br />
+            <TextField
+              id="outlined-basic"
+              label="Salario base"
+              variant="outlined"
+              type="text"
+            />
+            <br />
+            <br />
+            <TextField
+              id="outlined-basic"
+              label="Horas extra"
+              variant="outlined"
+              type="text"
+            />
+            <br /> <br />
+            <Button
+          variant="contained"
+          startIcon={<SaveSharp />}
+        >
+           Guardar horas trabajadas
+        </Button>
+          </div>
+          <br />
+          <Button
+          variant="contained"
+          startIcon={<HomeSharp />}
+          onClick={() => (window.location.href = "/")}
+        >
+          Home
+        </Button>
+        </Grid>
+      </Grid>
+    );
+  }
 }
 export default Horas;
