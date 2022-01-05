@@ -1,36 +1,14 @@
 import axios from '../../axios';
 
 const appActions = {
-    addIngredient: ingredient => {
-        return {
-            type: "ADD_INGREDIENT",
-            ingredient
-        };
-    },
-    startOver: () =>{
-        return{
-            type: "START_OVER"
-        }
-    },
-    deleteIngredient: position => {
-        return{
-            type: "DELETE_INGREDIENT",
-            position
-        }
-    },
-    changePosition: (index, move) =>{
-        return{
-            type: "CHANGE_POSITION",
-            index, move
-        }
-    },
-    setIngredients: () => (
+    
+    getSolicitud: () => (
         (dispatch) => {
-            axios.get('/ingredients')
+            axios.get('/Solicitud')
             .then(res => {
                 dispatch({
-                    type: "SET_INGREDIENTS",
-                    ingredients:  res.data
+                    type: "GET_SOLICITUD",
+                    datos:  res.data
                   });
             })
         }

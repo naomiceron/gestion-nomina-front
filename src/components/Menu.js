@@ -42,7 +42,7 @@ class ButtonAppBar extends Component {
               <Menu onStateChange={ isMenuOpen}>
                 <a id="home" className="menu-item" href="/">Home</a>
                 <a id="home" className="menu-item" href="/horas">Horas Trabajadas</a>
-                <a id="home" className="menu-item" href="/">Home3</a>
+                <a id="home" className="menu-item" href="/solicitud">Solicitud Nómina</a>
               </Menu>
 
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, ml: 6 }}>
