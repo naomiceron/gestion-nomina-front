@@ -3,7 +3,7 @@ const initalState = {
     datos: []
 };
 
-let currentIngredients = [];
+//let currentIngredients = [];
 const appReducer = (state = initalState, action) => {
     switch (action.type){
         case 'GET_SOLICITUD':
