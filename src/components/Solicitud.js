@@ -17,7 +17,7 @@ const json = JSON.stringify({
 "HorasE" : 221,
 "SalarioT" : 1234 });
 
-const rest={};
+//const rest={};
 
 class Solicitud extends Component {
   componentDidMount() {
@@ -46,7 +46,7 @@ class Solicitud extends Component {
             variant="contained"
             startIcon={<SaveAltSharp />}
             onClick={async () => {let rest = await axios.post('https://deerland-finanzas.herokuapp.com/solicitud-nomina/agregar', json); 
-            let data = rest.data;
+            //let data = rest.data;
             axios.post('https://deerland-empleados.herokuapp.com/Solicitud', rest.data)}}
           >
             Enviar

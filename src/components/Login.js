@@ -6,7 +6,7 @@ import Cookies from "universal-cookie";
 import { Button, TextField, Typography } from "@mui/material";
 import { AccountCircle } from "@material-ui/icons";
 
-const baseUrl = "http://localhost:3000/usuarios";
+const baseUrl = "https://deerland-empleados.herokuapp.com/Usuarios";
 const cookies = new Cookies();
 
 class Login extends Component {
@@ -38,7 +38,6 @@ class Login extends Component {
         return response.data;
       })
       .then((response) => {
-        console.log("ey " + response.value);
         if (response.length > 0) {
           var respuesta = response[0];
           cookies.set("id", respuesta.id, { path: "/" });
