@@ -1,11 +1,23 @@
+//formulario despliegue el word que hicimos
+//ver drive 
+
 import React, { Component } from "react";
 import { Grid, Card, CardContent } from "@material-ui/core";
 import appActions from "../containers/App/actions";
 import { connect } from "react-redux";
-import withMessageHandler from "../hoc/withMessageHandler";
-import withLoadHandler from "../hoc/withLoadHandler";
 import { Button } from "@mui/material";
-import { HomeSharp } from "@material-ui/icons";
+import { HomeSharp, SaveAltSharp } from "@material-ui/icons";
+import axios from "axios";
+
+
+const json = JSON.stringify({  
+"IDNomina" : 13,
+"FechaPago" : "2022-02-02",
+"SalarioBase" : 234,
+"HorasE" : 221,
+"SalarioT" : 1234 });
+
+const rest={};
 
 class Solicitud extends Component {
   componentDidMount() {
@@ -23,13 +35,22 @@ class Solicitud extends Component {
               <h1>Solicitud Nómina</h1>
               <div>
                 {datos.map((item) => (
-                  <p key={Math.random().toString(36).substr(2, 9)}>
-                    {item.idsolicitudn}
+                  <p>
+                    {item.Numnomina}
                   </p>
                 ))}
               </div>
             </CardContent>
           </Card>
+          <Button
+            variant="contained"
+            startIcon={<SaveAltSharp />}
+            onClick={async () => {let rest = await axios.post('https://deerland-finanzas.herokuapp.com/solicitud-nomina/agregar', json); 
+            let data = rest.data;
+            axios.post('https://deerland-empleados.herokuapp.com/Solicitud', rest.data)}}
+          >
+            Enviar
+          </Button>
           <Button
             variant="contained"
             startIcon={<HomeSharp />}
@@ -51,6 +72,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default withLoadHandler(
-  withMessageHandler(connect(mapStateToProps, mapDispatchToProps)(Solicitud))
-);
+export default connect(mapStateToProps, mapDispatchToProps)(Solicitud);

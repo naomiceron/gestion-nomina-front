@@ -2,16 +2,20 @@ import React, { Component } from "react";
 import {  Grid, Button, TextField, Typography } from "@mui/material";
 import { HomeSharp, SaveSharp } from "@material-ui/icons";
 
+//aqui debe haber inputs de 
+//drop down eliges el empleado 
+//horas trabajadas (solicitudnom)
+//horas extras (solicitudnom)
+
 class Horas extends Component {
   render() {
     return (
-        <Grid container spacing={2} marginLeft={5} marginTop={5}>
+        <Grid container spacing={2} marginLeft={5} marginTop={0}>
         <Grid item sm={12} md={6} className="ingredients-form">
           <div className="form-group">
           <Typography variant="h4" component="h4">
               Reporte de horas trabajadas
             </Typography>
-            <br />
             <TextField
               id="outlined-basic"
               label="ID Empleado"
