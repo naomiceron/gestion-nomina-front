@@ -31,14 +31,14 @@ class Solicitud extends Component {
       <Grid container spacing={2}>
         <Grid item sm={12} md={6} className="ingredients-form">
           <Card raised>
-            <CardContent>
+          <CardContent>
               <h1>Solicitud Nómina</h1>
-              <div>
-                {datos.map((item) => (
-                  <p>
-                    {item.Numnomina}
-                  </p>
-                ))}
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <h1>Hola</h1>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -46,7 +46,7 @@ class Solicitud extends Component {
             variant="contained"
             startIcon={<SaveAltSharp />}
             onClick={async () => {let rest = await axios.post('https://deerland-finanzas.herokuapp.com/solicitud-nomina/agregar', json); 
-            //let data = rest.data;
+            let data = rest.data;
             axios.post('https://deerland-empleados.herokuapp.com/Solicitud', rest.data)}}
           >
             Enviar
