@@ -11,11 +11,11 @@ import axios from "axios";
 
 
 const json = JSON.stringify({  
-"IDNomina" : 13,
+"IDNomina" : new Number(13),
 "FechaPago" : "2022-02-02",
-"SalarioBase" : 234,
-"HorasE" : 221,
-"SalarioT" : 1234 });
+"SalarioBase" : new Number(234),
+"HorasE" : new Number(221),
+"SalarioT" : new Number(1234) });
 
 //const rest={};
 
@@ -33,12 +33,12 @@ class Solicitud extends Component {
           <Card raised>
             <CardContent>
               <h1>Solicitud Nómina</h1>
-              <div>
-                {datos.map((item) => (
-                  <p>
-                    {item.Numnomina}
-                  </p>
-                ))}
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <h1>Hola</h1>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -46,8 +46,9 @@ class Solicitud extends Component {
             variant="contained"
             startIcon={<SaveAltSharp />}
             onClick={async () => {let rest = await axios.post('https://deerland-finanzas.herokuapp.com/solicitud-nomina/agregar', json); 
-            //let data = rest.data;
-            axios.post('https://deerland-empleados.herokuapp.com/Solicitud', rest.data)}}
+            let data = rest.data;
+            console.log(rest.data);
+                axios.post('https://deerland-empleados.herokuapp.com/Solicitud', rest.data)}}
           >
             Enviar
           </Button>
