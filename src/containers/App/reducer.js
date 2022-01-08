@@ -10,7 +10,17 @@ const appReducer = (state = initalState, action) => {
             return {
                 ...state,
                 datos: [...action.datos]
-            };    
+            }; 
+        case 'GET_EMPLEADOS':   
+            return {
+                ...state,
+                datos: [...action.datos]
+            }; 
+        case 'GET_NOMINA':   
+            return {
+                ...state,
+                datos: [...action.datos]
+            }; 
         default: return state;
     }
 };

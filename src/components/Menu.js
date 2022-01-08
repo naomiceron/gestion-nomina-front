@@ -4,9 +4,6 @@ import { Box } from "@mui/material";
 import { Toolbar } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
-//import { IconButton } from '@mui/material';
-//import { MenuIcon } from '@material-ui/icons';
-//import { render } from '@testing-library/react';
 import { slide as Menu } from "react-burger-menu";
 import Cookies from "universal-cookie";
 import "../css/hamburguesa.css";
@@ -43,9 +40,15 @@ class ButtonAppBar extends Component {
               <a id="home" className="menu-item" href="/">
                 Home
               </a>
+              <br />
               <a id="home" className="menu-item" href="/horas">
                 Horas Trabajadas
               </a>
+              <br />
+              <a id="home" className="menu-item" href="/revisarhoras">
+                Revisar horas trabajadas
+              </a>
+              <br />
               <a id="home" className="menu-item" href="/solicitud">
                 Solicitud Nómina
               </a>
