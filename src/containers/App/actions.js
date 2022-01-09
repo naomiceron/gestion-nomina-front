@@ -11,6 +11,20 @@ const appActions = {
                     datos:  res.data
                   });
             })
+            axios.get('/Empleado')
+            .then(res => {
+                dispatch({
+                    type: "GET_EMPLEADOS",
+                    datos:  res.data
+                  });
+            })
+            axios.get('/Nomina')
+            .then(res => {
+                dispatch({
+                    type: "GET_NOMINA",
+                    datos:  res.data
+                  });
+            })
         }
     )
 };
