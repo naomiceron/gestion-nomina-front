@@ -5,6 +5,7 @@ import ButtonAppBar from "../components/Menu";
 import Horas from "../components/Horas";
 import Solicitud from "../components/Solicitud";
 import RevisarHoras from "../components/RevisarHoras";
+import Nomina from "../components/Nomina";
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
         <Route exact path="/" component={Login} />
         <Route exact path="/menu" component={ButtonAppBar} />
         <Route exact path="/horas" component={Horas} />
+        <Route exact path="/nomina" component={Nomina} />
         <Route exact path="/revisarhoras" component={RevisarHoras} />
         <Route exact path="/solicitud" component={Solicitud} />
       </Switch>

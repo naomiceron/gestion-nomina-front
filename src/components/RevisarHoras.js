@@ -57,7 +57,7 @@ export default function RevisarHoras() {
             color="success"
             variant="contained"
             startIcon={<AddSharp />}
-            onClick={() => (window.location.href = "/")}
+            onClick={() => (window.location.href = "./nomina")}
           >
             Calcular nomina
           </Button>
