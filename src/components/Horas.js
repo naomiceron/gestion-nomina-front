@@ -65,11 +65,12 @@ export default function Horas(){
             />
             <br />
             <Button 
+            color="success"
             variant="contained" 
             startIcon={<SaveSharp />}
             onClick={async () => {let rest = await axios.post('https://deerland-empleados.herokuapp.com/Nomina', 
             {'idempleados': selectedEmpleados, 'horasextra': horasextra, 'horastrabajadas':horastrabajadas } );
-          alert('Si se guardó bro')}}
+           alert('Si se guardó bro')}}
             >
               Guardar horas trabajadas
             </Button>
