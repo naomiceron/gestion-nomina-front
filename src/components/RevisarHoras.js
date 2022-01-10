@@ -57,7 +57,9 @@ export default function RevisarHoras() {
             color="success"
             variant="contained"
             startIcon={<AddSharp />}
-            onClick={() => (window.location.href = "./nomina")}
+            onClick={() => {calcularNomina();
+            
+            }}
           >
             Calcular nomina
           </Button>
@@ -82,4 +84,31 @@ export default function RevisarHoras() {
       </Grid>
     </Grid>
   );
+    function calcularNomina(){
+      Object.keys(horas).forEach(key => {axios.post('https://deerland-empleados.herokuapp.com/AddSol', 
+      {'NumNomina': horas[key].id});
+      let comisiones = horas[key].horasextra * 150;
+      let sat = (horas[key].salariobase)*(6.5/100);
+      let imss = (horas[key].salariobase)*(2.5/100);
+      let fvivienda = (horas[key].salariobase)*(5/100);
+      let fretiro = (horas[key].salariobase)*(1.125/100);
+      let sueldototal = (parseInt(horas[key].salariobase) + comisiones) - (sat + imss + fvivienda + fretiro);
+      console.log(sueldototal);
+      axios.post("https://deerland-empleados.herokuapp.com/Nomina",
+        {
+          'idnomina': horas[key].id,
+          'comisiones': comisiones,
+          'salariobase': horas[key].salariobase,
+          'sat': sat,
+          'imss': imss,
+          'fvivienda': fvivienda,
+          'fretiro': fretiro, 
+          'sueldototal': sueldototal
+        }).then(response => console.log(response));
+      });
+      alert("Nómina Calculada");
+      window.location.href = "./nomina";
+    }
+
+
 }

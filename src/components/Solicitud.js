@@ -38,7 +38,7 @@ export default function Solicitud() {
       width: 80,
     },
     {
-      field: "sueldo_total",
+      field: "sueldototal",
       headerName: "Sueldo Total",
       width: 125,
     },
@@ -110,7 +110,7 @@ export default function Solicitud() {
     {'IDNomina': solicitud[key].id, 'FechaPago': fechaPago, 'SalarioBase':solicitud[key].salariobase, 'HorasE':solicitud[key].horasextra, 'SalarioT': solicitud[key].sueldo_total})
     .then(response => axios.post('https://deerland-empleados.herokuapp.com/Solicitud', response.data[0]));   }  )
 
-    alert('Si se envío bro'); 
+    alert('Envíado con éxito'); 
+    window.location.href = "/";
   }
 }
-//axios.post('https://deerland-empleados.herokuapp.com/Solicitud', JSON.stringify(response.data))
