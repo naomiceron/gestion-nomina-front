@@ -45,11 +45,6 @@ export default function Nomina() {
         width: 80,
     },
     {
-        field: "aguinaldo",
-        headerName: "aguinaldo",
-        width: 80,
-    },
-    {
         field: "sat",
         headerName: "sat",
         width: 80,
@@ -72,16 +67,6 @@ export default function Nomina() {
     {
         field: "sueldototal",
         headerName: "sueldo total",
-        width: 80,
-    },
-    {
-        field: "fechatransaccion",
-        headerName: "fecha transaccion",
-        width: 80,
-    },
-    {
-        field: "transaccion",
-        headerName: "transaccion",
         width: 80,
     },
     {

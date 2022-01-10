@@ -2,8 +2,8 @@
 //boton que diga generar solicitud de pago
 // ese boton genere pdf (ver drive)
 import React, { useEffect } from "react";
-import { Grid, Button, Typography, TextField } from "@mui/material";
-import { HomeSharp, Send, PictureAsPdf } from "@material-ui/icons";
+import { Grid, Button, Typography} from "@mui/material";
+import { HomeSharp, PictureAsPdf } from "@material-ui/icons";
 import FormControl from "@mui/material/FormControl";
 import { DataGrid } from "@mui/x-data-grid";
 import axios from "axios";
@@ -34,7 +34,7 @@ export default function RevisarSolicitud() {
       width: 125,
     },
     {
-      field: "sueldo_total",
+      field: "sueldototal",
       headerName: "Importe",
       width: 80,
     },
@@ -103,7 +103,7 @@ export default function RevisarSolicitud() {
           Nombre: String(solicitud[key].nombreempleado),
           Cuenta: String(solicitud[key].numerocuenta),
           Email: String(solicitud[key].email),
-          Importe: String(solicitud[key].sueldo_total)
+          Importe: String(solicitud[key].sueldototal)
          }];
          data.forEach(element => {
            var temp = [element.Nombre, element.Cuenta, element.Email, element.Importe];
@@ -112,11 +112,6 @@ export default function RevisarSolicitud() {
          });
         }
     });
-    var itemNew = [
-      { id: 'Case Number', name: '101111111' },
-      { id: 'Patient Name', name: 'UAT DR' },
-      { id: 'Hospital Name', name: 'Dr Abcd' }
-    ];
 
     doc.autoTable({
         head: col,
