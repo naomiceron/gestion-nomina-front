@@ -52,6 +52,9 @@ class ButtonAppBar extends Component {
               <a id="home" className="menu-item" href="/solicitud">
                 Solicitud Nómina
               </a>
+              <a id="home" className="menu-item" href="/revisarsolicitud">
+                Revisar Solicitudes Nómina
+              </a>
             </Menu>
 
             <Typography
