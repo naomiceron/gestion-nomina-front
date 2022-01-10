@@ -5,6 +5,7 @@ import ButtonAppBar from "../components/Menu";
 import Horas from "../components/Horas";
 import Solicitud from "../components/Solicitud";
 import RevisarHoras from "../components/RevisarHoras";
+import RevisarSolicitud from "../components/RevisarSolicitud";
 
 function Routes() {
   return (
@@ -15,6 +16,7 @@ function Routes() {
         <Route exact path="/horas" component={Horas} />
         <Route exact path="/revisarhoras" component={RevisarHoras} />
         <Route exact path="/solicitud" component={Solicitud} />
+        <Route exact path="/revisarsolicitud" component={RevisarSolicitud} />
       </Switch>
     </BrowserRouter>
   );
