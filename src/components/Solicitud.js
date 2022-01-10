@@ -107,7 +107,7 @@ export default function Solicitud() {
   );
   function sendSolicitud(solicitud){
     Object.keys(solicitud).forEach(key => {axios.post('https://deerland-finanzas.herokuapp.com/solicitud-nomina/agregar', 
-    {'IDNomina': solicitud[key].id, 'FechaPago': fechaPago, 'SalarioBase':solicitud[key].salariobase, 'HorasE':solicitud[key].horasextra, 'SalarioT': solicitud[key].sueldo_total})
+    {'IDNomina': solicitud[key].id, 'FechaPago': fechaPago, 'SalarioBase':solicitud[key].salariobase, 'HorasE':solicitud[key].horasextra, 'SalarioT': solicitud[key].sueldototal})
     .then(response => axios.post('https://deerland-empleados.herokuapp.com/Solicitud', response.data[0]));   }  )
 
     alert('Envíado con éxito'); 
